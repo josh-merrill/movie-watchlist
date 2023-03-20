@@ -1,4 +1,4 @@
-# co61d41e8bc242163767aaa5c
+# Scrimba Movie Watch List Project
 
 Quick start:
 

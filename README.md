@@ -1,4 +1,4 @@
-# Scrimba Movie Watch List Project
+# Movie Watch List Project
 
 Quick start:
 

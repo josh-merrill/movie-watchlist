@@ -30,7 +30,6 @@ header {
   flex-direction: column;
   justify-content: center;
   height: 40vh;
-  width: 100%;
 }
 
 header h1 {
@@ -54,14 +53,17 @@ a:hover {
 form {
   display: flex;
   position: relative;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 form input[type="search"] {
+  height: auto;
   padding: 1em 2.75em 1em;
   flex: 1;
   border: none;
   border-radius: 6px 0 0 6px;
-  background: #2e2e2f url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z' fill='gray' %3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+  background: #2e2e2f;
   color: gray;
 }
 
@@ -252,12 +254,8 @@ form button {
     }
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 600px) {
     header, main {
-      width: 550px;
+      width: 600px;
     }
-
-    /* .placeholder {
-      height: 55vh;
-    } */
 }

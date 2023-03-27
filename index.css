@@ -126,7 +126,7 @@ form button {
 }
 
 .placeholder {
-    height: 80vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -145,7 +145,7 @@ form button {
     width: auto;
 }
 
-.modal-inner-loading {
+.inner-loading {
   height: 60vh;
   display: flex;
   flex-direction: column;

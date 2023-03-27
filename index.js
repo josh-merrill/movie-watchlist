@@ -5,6 +5,12 @@ const searchInput = document.getElementById("search-input");
 const searchResults = document.getElementById("search-results");
 const placeholder = document.getElementById("placeholder");
 const apiKey = "678402f2";
+const watchlistLink = document.getElementById("watchlist");
+
+// Go to Watchlist
+watchlistLink.addEventListener("click", function() {
+  location.href = "watchlist.html"
+})
 
 searchForm.addEventListener("submit", searchFilms);
 

@@ -14,9 +14,7 @@ body {
 /* layout styling */
 header,
 main {
-  margin: 0 auto;
-  padding: 0 2.75em;
-  width: 100%;
+      padding: 0 2.75em;
 }
 
 main {
@@ -247,9 +245,10 @@ form button {
 @media screen and (min-width: 550px) {
     header, main {
       width: 550px;
+      margin: 0 auto;
     }
 
-    .placeholder {
+    /* .placeholder {
       height: 55vh;
-    }
+    } */
 }

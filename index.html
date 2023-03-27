@@ -1,6 +1,6 @@
 <html>
 
-<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+<head>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -11,8 +11,8 @@
 
 <body>
 	<header>
-		<h1>Find your film</h1>
-		<a href="watchlist.html">My watchlist</a>
+		<h1 href="" id="home">Find your film</h1>
+		<a href="watchlist.html" id="watchlist">My watchlist</a>
 	</header>
 	<main>
 		<form id="film-search">
@@ -22,12 +22,13 @@
 			<button>Search</button>
 		</form>
 		<div id="search-results">
+		</div>
 			<div class="placeholder" id="placeholder">
 				<img src="./images/explore.png" alt="Film reel">
 				<h3>Start exploring</h2>
 			</div>
-		</div>
 	</main>
+		<div id="film-modal"></div>
 	<script src="index.js" type="module"></script>
 </body>
 

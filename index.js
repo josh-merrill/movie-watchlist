@@ -100,15 +100,16 @@ function addToWatchlist(event) {
           Genre: film.Genre,
           Plot: film.Plot,
           Id: film.imdbID,
-        };
+        }
+
         // Check if filmObject already exists in watchlistArray
         if (!watchlistArray.some((obj) => obj.Id === filmObject.Id)) {
-          watchlistArray.push(filmObject);
-          showModal(filmObject);
+          watchlistArray.push(filmObject)
+          showModal(filmObject)
           localStorage.setItem("watchlist", JSON.stringify(watchlistArray));
         } else {
           alert("This movie is already in your watchlist!");
         }
-      });
+      })
   }
 }

@@ -15,6 +15,8 @@ body {
 header,
 main {
       padding: 0 2.75em;
+      margin: 0 auto;
+      width: 100%;
 }
 
 main {
@@ -234,7 +236,7 @@ form button {
     display: none;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 390px) {
 
     header {
         flex-direction: row;
@@ -253,7 +255,6 @@ form button {
 @media screen and (min-width: 550px) {
     header, main {
       width: 550px;
-      margin: 0 auto;
     }
 
     /* .placeholder {

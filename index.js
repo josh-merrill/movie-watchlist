@@ -15,7 +15,7 @@ async function searchFilms(event) {
     searchResults.innerHTML = `
     <div class="modal-inner-loading">
       <p>Searching for films</p>
-      <img src="./images/loading.svg" class="loading">
+      <img src="/images/loading.svg">
     </div>`
 
     // Gather initial API response data

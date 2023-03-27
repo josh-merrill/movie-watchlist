@@ -145,6 +145,14 @@ form button {
     width: auto;
 }
 
+.modal-inner-loading {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* modal styling */
 
 .film-modal {

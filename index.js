@@ -11,6 +11,13 @@ searchForm.addEventListener('submit', searchFilms)
 async function searchFilms(event) {
     event.preventDefault()
 
+    // Show loading spinner
+    searchResults.innerHTML = `
+    <div class="modal-inner-loading">
+      <p>Searching for films</p>
+      <img src="images/loading.svg" class="loading">
+    </div>`
+
     // Gather initial API response data
     const searchQuery = searchInput.value
     const res = await fetch(`https://www.omdbapi.com/?s=${searchQuery}&apikey=${apiKey}`)
@@ -74,23 +81,29 @@ async function renderFilms(results) {
 searchResults.addEventListener('click',  addToWatchlist)
 
 function addToWatchlist(event) {
-    const watchlistArray = JSON.parse(localStorage.getItem("watchlist")) || []
-        if (event.target.classList.contains('add-to-watchlist')) {
-            const filmId = event.target.parentNode.id
-            fetch(`https://www.omdbapi.com/?i=${filmId}&apikey=${apiKey}`)
-            .then((res) => res.json())
-            .then(film => {
-                const filmObject = {
-                Title: film.Title,
-                Poster: film.Poster,
-                imdbRating: film.imdbRating,
-                Runtime: film.Runtime,
-                Genre: film.Genre,
-                Plot: film.Plot,
-                Id: film.imdbID
-            }
-            watchlistArray.push(filmObject)
-            showModal(filmObject)
-            localStorage.setItem("watchlist", JSON.stringify(watchlistArray))    
-        })}
+  const watchlistArray = JSON.parse(localStorage.getItem("watchlist")) || []
+  if (event.target.classList.contains('add-to-watchlist')) {
+      const filmId = event.target.parentNode.id
+      fetch(`https://www.omdbapi.com/?i=${filmId}&apikey=${apiKey}`)
+          .then((res) => res.json())
+          .then(film => {
+              const filmObject = {
+                  Title: film.Title,
+                  Poster: film.Poster,
+                  imdbRating: film.imdbRating,
+                  Runtime: film.Runtime,
+                  Genre: film.Genre,
+                  Plot: film.Plot,
+                  Id: film.imdbID
+              }
+              // Check if filmObject already exists in watchlistArray
+              if (!watchlistArray.some(obj => obj.Id === filmObject.Id)) {
+                  watchlistArray.push(filmObject)
+                  showModal(filmObject)
+                  localStorage.setItem("watchlist", JSON.stringify(watchlistArray))
+              } else {
+                  alert('This movie is already in your watchlist!')
+              }
+          })
+  }
 }
